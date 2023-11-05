@@ -18,6 +18,7 @@ namespace dotnetapp.Controllers
 
         public IActionResult List()
         {
+            return View();
 
         }
         public IActionResult Find()
