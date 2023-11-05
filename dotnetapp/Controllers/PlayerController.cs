@@ -14,6 +14,28 @@ namespace dotnetapp.Controllers
         {
             _context = context;
         }
+
+
+        public IActionResult List()
+        {
+
+        }
+        public IActionResult Find()
+        {
+            
+        }
+        public IActionResult Add()
+        {
+            
+        }
+        public IActionResult Edit()
+        {
+            
+        }
+        public IActionResult Delete()
+        {
+            
+        }
     }
 }
 
