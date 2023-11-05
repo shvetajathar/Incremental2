@@ -21,9 +21,10 @@ namespace dotnetapp.Controllers
             return View();
 
         }
-        public IActionResult Find()
+        public IActionResult Find(int id)
         {
-            
+            var data=context.Players.Find(id);
+            return View(data);
         }
         public IActionResult Add()
         {
