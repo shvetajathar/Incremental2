@@ -26,9 +26,23 @@ namespace dotnetapp.Controllers
             var data=context.Players.Find(id);
             return View(data);
         }
-        public IActionResult Add()
+        public IActionResult Add(Player p)
         {
+            if(ModelState.IsValid)
+            {
+                Player Plr=new Player();
+                Plr.Name=p.Name;
+                Plr.Category=p.Category;
+                Plr.BiddingPrice=p.BiddingPrice;
+                
+
+
+                context.Teams.Add(p);
+                context.SaveChanges();
+
+            }
             
+
         }
         public IActionResult Edit()
         {

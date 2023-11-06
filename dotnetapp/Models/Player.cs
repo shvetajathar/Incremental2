@@ -13,6 +13,6 @@ namespace dotnetapp.Models
         
         public decimal BiddingPrice{get;set;}
         
-
+        public Team Team{get;set;}
     }
 }
