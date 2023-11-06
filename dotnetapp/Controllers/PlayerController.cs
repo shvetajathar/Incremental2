@@ -72,10 +72,17 @@ namespace dotnetapp.Controllers
             }
             return View();
         }
+        public IActionResult Delete()
+        {
+            return View();
+
+        }
+        [HttpPost]
         public IActionResult Delete(int id)
         {
             var data=context.Players.Find(id);
-            return View(data);
+            context.Players.Remove(data);
+            return View();
         }
     }
 }
