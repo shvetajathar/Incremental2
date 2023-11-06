@@ -34,9 +34,9 @@ namespace dotnetapp.Controllers
                 Plr.Name=p.Name;
                 Plr.Category=p.Category;
                 Plr.BiddingPrice=p.BiddingPrice;
-                Plr.Team.TeamId=p.TeamId;
+                
 
-                context.Teams.Add(Plr);
+                context.Players.Add(Plr);
                 context.SaveChanges();
                 return RedirectToAction();
             }
@@ -45,8 +45,19 @@ namespace dotnetapp.Controllers
             
 
         }
-        public IActionResult Edit()
+        public IActionResult Edit(int id,Player p)
         {
+
+            if(ModelState.IsValid)
+            {
+                var data=context.Players.Find(id);
+                Player Plr=new Player();
+                Plr.Name=p.Name;
+                Plr.Category=p.Category;
+                Plr.BiddingPrice=p.BiddingPrice;
+                context.SaveChanges();
+                return RedirectToAction();
+            }
             return View();
         }
         public IActionResult Delete()
