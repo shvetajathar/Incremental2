@@ -26,6 +26,12 @@ namespace dotnetapp.Controllers
             var data=context.Players.Find(id);
             return View(data);
         }
+        public IActionResult Add()
+        {
+            return View();
+
+        }
+        [HttpPost]
         public IActionResult Add(Player p)
         {
             if(ModelState.IsValid)
@@ -45,13 +51,19 @@ namespace dotnetapp.Controllers
             
 
         }
+        public IActionResult Edit()
+        {
+            return View();
+
+        }
+        [HttpPost]
         public IActionResult Edit(int id,Player p)
         {
 
             if(ModelState.IsValid)
             {
-                var data=context.Players.Find(id);
-                Player Plr=new Player();
+               Player Plr=context.Players.Find(id);
+                
                 Plr.Name=p.Name;
                 Plr.Category=p.Category;
                 Plr.BiddingPrice=p.BiddingPrice;
@@ -60,9 +72,10 @@ namespace dotnetapp.Controllers
             }
             return View();
         }
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            var data=context.Players.Find(id);
+            return View(data);
         }
     }
 }
