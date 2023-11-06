@@ -8,7 +8,7 @@ namespace dotnetapp.Controllers
 {
     public class PlayerController : Controller
     {
-        public static List<Player> player=new Player{Id=1,Name="dhoni",Category="A",BiddingAmount=500000};
+        public static List<Player> player=new List<Player>{new Player{Id=1,Name="dhoni",Category="A",BiddingAmount=500000}};
         private readonly ApplicationDbContext context;
 
         public PlayerController(ApplicationDbContext _context)
