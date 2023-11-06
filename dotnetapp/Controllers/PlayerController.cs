@@ -89,6 +89,7 @@ namespace dotnetapp.Controllers
         {
             var data=context.Players.Find(id);
             context.Players.Remove(data);
+            context.SaveChanges();
             return View();
         }
     }
