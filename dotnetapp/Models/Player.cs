@@ -12,6 +12,7 @@ namespace dotnetapp.Models
         public string Name{get;set;}
         
         public string Category{get;set;}
+        [Range(1,int.MaxValue,ErrorMessage ="BiddingAmount should be positive")]
         
         public decimal BiddingAmount{get;set;}
         // [ForeignKey("Team")]
