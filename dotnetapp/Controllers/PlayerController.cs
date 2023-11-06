@@ -8,11 +8,11 @@ namespace dotnetapp.Controllers
 {
     public class PlayerController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext context;
 
-        public PlayerController(ApplicationDbContext context)
+        public PlayerController(ApplicationDbContext _context)
         {
-            _context = context;
+            context = _context;
         }
 
 
@@ -34,23 +34,24 @@ namespace dotnetapp.Controllers
                 Plr.Name=p.Name;
                 Plr.Category=p.Category;
                 Plr.BiddingPrice=p.BiddingPrice;
-                
+                Plr.Team.TeamId=p.TeamId;
 
-
-                context.Teams.Add(p);
+                context.Teams.Add(Plr);
                 context.SaveChanges();
-
+                return RedirectToAction();
             }
+            return View();
+
             
 
         }
         public IActionResult Edit()
         {
-            
+            return View();
         }
         public IActionResult Delete()
         {
-            
+            return View();
         }
     }
 }
