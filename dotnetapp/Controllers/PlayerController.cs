@@ -8,11 +8,17 @@ namespace dotnetapp.Controllers
 {
     public class PlayerController : Controller
     {
+        public static List<Player> player=new Player{Id=1,Name="dhoni",Category="A",BiddingAmount=500000};
         private readonly ApplicationDbContext context;
 
         public PlayerController(ApplicationDbContext _context)
         {
             context = _context;
+        }
+        public IActionResult Index()
+        {
+            return View();
+
         }
 
 
@@ -39,7 +45,7 @@ namespace dotnetapp.Controllers
                 Player Plr=new Player();
                 Plr.Name=p.Name;
                 Plr.Category=p.Category;
-                Plr.BiddingPrice=p.BiddingPrice;
+                Plr.BiddingAmount=p.BiddingAmount;
                 
 
                 context.Players.Add(Plr);
@@ -66,7 +72,7 @@ namespace dotnetapp.Controllers
                 
                 Plr.Name=p.Name;
                 Plr.Category=p.Category;
-                Plr.BiddingPrice=p.BiddingPrice;
+                Plr.BiddingAmount=p.BiddingAmount;
                 context.SaveChanges();
                 return RedirectToAction();
             }
