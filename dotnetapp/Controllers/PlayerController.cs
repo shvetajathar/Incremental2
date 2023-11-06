@@ -17,7 +17,8 @@ namespace dotnetapp.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var data=context.Players.ToList();
+            return View(data);
 
         }
 
