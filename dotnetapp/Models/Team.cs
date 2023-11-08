@@ -9,7 +9,7 @@ namespace dotnetapp.Models
         public int TeamId{get;set;}
         
         
-        public ICollection<Player> Player{get;set;}
+        public ICollection<Player> Player {get;set;}
         
 
     }
