@@ -15,6 +15,7 @@ namespace dotnetapp.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
 
         // write your AccountController here...
+        
 
         
     }
