@@ -70,9 +70,6 @@ namespace dotnetapp.Controllers
         {
             if(ModelState.IsValid)
             {
-
-                
-
                 context.Players.Add(p);
                 context.SaveChanges();
                 return RedirectToAction("Index");
