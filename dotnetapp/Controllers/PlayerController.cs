@@ -58,6 +58,23 @@ namespace dotnetapp.Controllers
             
 
         }
+        [HttpPost]
+        public IActionResult Create(Player p)
+        {
+            if(ModelState.IsValid)
+            {
+
+                
+
+                context.Players.Add(p);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+
+            
+
+        }
         public IActionResult Edit()
         {
             return View();
@@ -85,13 +102,14 @@ namespace dotnetapp.Controllers
 
         }
         [HttpPost]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var data=context.Players.Find(id);
-            context.Players.Remove(data);
+            var pl=context.Players.Find(id);
+            context.Players.Remove(pl);
             context.SaveChanges();
             return View();
         }
+
     }
 }
 
