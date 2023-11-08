@@ -75,7 +75,7 @@ namespace dotnetapp.Controllers
             
 
         }
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
             return View();
 
@@ -96,9 +96,20 @@ namespace dotnetapp.Controllers
             }
             return View();
         }
-        public IActionResult Delete()
+         public IActionResult Delete(int id)
         {
+            
             return View();
+
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Player p)
+        {
+            Player pl=context.Players.Find(p.Id);
+            context.Players.Remove(pl);
+            context.SaveChanges();
+            return RedirectToAction("Index");
 
         }
         [HttpPost]
