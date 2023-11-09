@@ -1,1 +1,24 @@
 @model Player
+<h2>Add Players</h2>
+@using(Html.BeginForm())
+{
+    
+    @Html.DisplayNameFor(p=>p.Name)
+    <br>
+    @Html.EditorFor(p=>p.Name)
+    <br>
+    <br>
+    @Html.DisplayNameFor(p=>p.Age)
+    <br>
+    @Html.EditorFor(p=>p.Age)
+    <br>
+    @Html.DisplayNameFor(p=>p.Category)
+    <br>
+    @Html.EditorFor(p=>p.Category)
+    <br>
+    @Html.DisplayNameFor(p=>p.BiddingAmount)
+    <br>
+    @Html.EditorFor(p=>p.BiddingAmount)
+    
+
+}
