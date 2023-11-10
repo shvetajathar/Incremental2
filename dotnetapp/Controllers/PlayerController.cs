@@ -127,7 +127,8 @@ namespace dotnetapp.Controllers
 
         public IActionResult DisplayAllPlayers()
         {
-            
+            var data=from p in context.Players select p
+
         }
 
     }
