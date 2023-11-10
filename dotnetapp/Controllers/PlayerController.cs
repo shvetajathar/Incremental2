@@ -127,7 +127,14 @@ namespace dotnetapp.Controllers
 
         public IActionResult DisplayAllPlayers()
         {
-            var data=from p in context.Players select p
+            var data=from p in context.Players select p;
+            return Ok(data);
+
+        }
+        public IActionResult DisplayAllTeams()
+        {
+            var data=from t in context.Teams select t;
+            return Ok(data);
 
         }
 
