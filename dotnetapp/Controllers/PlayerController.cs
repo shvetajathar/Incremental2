@@ -125,6 +125,11 @@ namespace dotnetapp.Controllers
             return View();
         }
 
+        public IActionResult DisplayAllPlayers()
+        {
+            
+        }
+
     }
 }
 
