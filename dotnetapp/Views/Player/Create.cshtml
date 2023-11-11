@@ -27,11 +27,13 @@
     @Html.EditorFor(p=>p.BiddingAmount)
     <br>
     </div>
+    <div>
     <label>Select Team</label>
     <select asp-for="TeamId"  asp-items="ViewBag.TeamId">
         <option value="">Choose Team</option>
     </select>
     <br>
+    </div>
 
     @Html.DisplayNameFor(p=>p.TeamId)
     <br>
