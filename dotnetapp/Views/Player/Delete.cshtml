@@ -2,3 +2,14 @@
 
 <h2>Delete Player</h2>
 
+<p>@Html.DisplayNameFor(p=>p.Name) : @Html.DisplayFor(p=>p.Name)</p>
+<p>@Html.DisplayNameFor(p=>p.Age) : @Html.DisplayFor(p=>p.Age)</p>
+<p>@Html.DisplayNameFor(p=>p.Category) : @Html.DisplayFor(p=>p.Category)</p>
+<p>@Html.DisplayNameFor(p=>p.BiddingAmount) : @Html.DisplayFor(p=>p.BiddingAmount)</p>
+
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete">
+    
+}
