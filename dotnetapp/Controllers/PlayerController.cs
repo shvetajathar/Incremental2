@@ -83,7 +83,7 @@ namespace dotnetapp.Controllers
         public IActionResult Edit(int id,Player p)
         {
 
-            if(ModelState.IsValid)
+           // if(ModelState.IsValid)
             {
                Player Plr=context.Players.Find(id);
                 
@@ -93,7 +93,7 @@ namespace dotnetapp.Controllers
                 context.SaveChanges();
                 return RedirectToAction();
             }
-            return View();
+            //return View();
         }
          public IActionResult Delete(int id)
         {

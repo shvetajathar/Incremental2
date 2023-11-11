@@ -4,5 +4,25 @@
 
 @using (Html.BeginForm())
 {
-    
+    @Html.DisplayNameFor(p=>p.Name)
+    <br>
+    @Html.EditorFor(p=>p.Name)
+    <br>
+    @Html.DisplayNameFor(p=>p.Age)
+    <br>
+    @Html.EditorFor(p=>p.Age)
+    <br>
+    @Html.DisplayNameFor(p=>p.Category)
+    <br>
+    @Html.EditorFor(p=>p.Category)
+    <br>
+    @Html.DisplayNameFor(p=>p.TeamId)
+    <br>
+    @Html.EditorFor(p=>p.TeamId)
+    <br>
+    @Html.DisplayNameFor(p=>p.BiddingAmount)
+    <br>
+    @Html.EditorFor(p=>p.BiddingAmount)
+    <br>
 }
+<input type="submit" value="edit save">
