@@ -10,7 +10,7 @@ namespace dotnetapp.Controllers
     [Route("[controller]")]
     public class PlayerController : Controller
     {
-        public static List<Player> player=new List<Player>{new Player{Id=1,Name="dhoni",Category="A",BiddingAmount=500000}};
+        // public static List<Player> player=new List<Player>{new Player{Id=1,Name="dhoni",Category="A",BiddingAmount=500000}};
         private readonly ApplicationDbContext context;
 
         public PlayerController(ApplicationDbContext _context)
@@ -36,31 +36,31 @@ namespace dotnetapp.Controllers
             var data=context.Players.Find(id);
             return View(data);
         }
-        public IActionResult Add()
-        {
-            return View();
+        // public IActionResult Add()
+        // {
+        //     return View();
 
-        }
-        [HttpPost]
-        public IActionResult Add(Player p)
-        {
-            if(ModelState.IsValid)
-            {
-                Player Plr=new Player();
-                Plr.Name=p.Name;
-                Plr.Category=p.Category;
-                Plr.BiddingAmount=p.BiddingAmount;
+        // }
+        // [HttpPost]
+        // public IActionResult Add(Player p)
+        // {
+        //     if(ModelState.IsValid)
+        //     {
+        //         Player Plr=new Player();
+        //         Plr.Name=p.Name;
+        //         Plr.Category=p.Category;
+        //         Plr.BiddingAmount=p.BiddingAmount;
                 
 
-                context.Players.Add(Plr);
-                context.SaveChanges();
-                return RedirectToAction();
-            }
-            return View();
+        //         context.Players.Add(Plr);
+        //         context.SaveChanges();
+        //         return RedirectToAction();
+        //     }
+        //     return View();
 
             
 
-        }
+        // }
         [HttpPost]
         [Route("create")]
         public IActionResult Create(){
