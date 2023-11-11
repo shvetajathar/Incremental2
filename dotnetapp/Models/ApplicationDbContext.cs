@@ -19,7 +19,6 @@ namespace dotnetapp.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             if(!optionsBuilder.IsConfigured){
-            Console.WriteLine("Debugger");
                 optionsBuilder.UseSqlServer("User ID=sa;password=examlyMssql@123; server=localhost;Database=IplDb;Trusted_Connection=False;Persist Security Info=False;Encrypt=False;");
             }
         }
