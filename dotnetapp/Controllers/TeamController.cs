@@ -36,6 +36,22 @@ namespace dotnetapp.Controllers
             context.SaveChanges();
             return RedirectToAction();
         }
+        public IActionResult Delete()
+        {
+            
+            return View();
+
+        }
+    [HttpPost]
+     public IActionResult Delete(int id)
+        {
+            var data=context.Teams.Find(id);
+            context.Teams.Remove(data);
+            context.SaveChanges();
+            
+            return RedirectToAction("List");
+
+        }
 
 
         
