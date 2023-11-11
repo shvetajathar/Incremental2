@@ -43,9 +43,9 @@ namespace dotnetapp.Controllers
 
         }
     [HttpPost]
-     public IActionResult Delete(int id)
+     public IActionResult Delete(Team t)
         {
-            var data=context.Teams.Find(id);
+            var data=context.Teams.Find(t.TeamId);
             context.Teams.Remove(data);
             context.SaveChanges();
             
