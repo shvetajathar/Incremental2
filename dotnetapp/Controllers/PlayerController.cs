@@ -76,7 +76,8 @@ namespace dotnetapp.Controllers
         }
         public IActionResult Edit(int id)
         {
-            return View();
+            var data = context.Players.Find(id);
+            return View(data);
 
         }
         [HttpPost]
@@ -91,7 +92,7 @@ namespace dotnetapp.Controllers
                 Plr.Category=p.Category;
                 Plr.BiddingAmount=p.BiddingAmount;
                 context.SaveChanges();
-                return RedirectToAction();
+                return RedirectToAction("Index");
             }
             //return View();
         }
