@@ -6,7 +6,7 @@ using dotnetapp.Models;
 
 namespace dotnetapp.Controllers
 {
-    [ApiController]
+    //[ApiController]
     [Route("[controller]")]
     public class PlayerController : Controller
     {
@@ -22,13 +22,6 @@ namespace dotnetapp.Controllers
         {
             var data=context.Players.ToList();
             return View(data);
-
-        }
-
-
-        public IActionResult List()
-        {
-            return View();
 
         }
         public IActionResult Find(int id)
@@ -61,11 +54,12 @@ namespace dotnetapp.Controllers
             
 
         // }
-        [HttpPost]
+        
         [Route("create")]
         public IActionResult Create(){
             return View();
         }
+        [HttpPost]
         public IActionResult Create(Player p)
         {
             if(ModelState.IsValid)
