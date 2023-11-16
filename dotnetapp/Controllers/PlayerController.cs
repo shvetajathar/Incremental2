@@ -6,8 +6,8 @@ using dotnetapp.Models;
 
 namespace dotnetapp.Controllers
 {
-     [ApiController]
-      [Route("[controller]")]
+    //  [ApiController]
+      //[Route("[controller]")]
     public class PlayerController : Controller
     {
         // public static List<Player> player=new List<Player>{new Player{Id=1,Name="dhoni",Category="A",BiddingAmount=500000}};
@@ -55,12 +55,12 @@ namespace dotnetapp.Controllers
 
         // }
         
-        
+           [Route("create")]
         public IActionResult Create(){
             return View();
         }
         [HttpPost]
-         [Route("create")]
+        [Route("create")]
         public IActionResult Create(Player p)
         {
             //if(ModelState.IsValid)
